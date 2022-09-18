@@ -10,7 +10,14 @@ import RealityKit
 
 struct ContentView : View {
     var body: some View {
-        ARViewContainer().edgesIgnoringSafeArea(.all)
+        ZStack {
+            ARViewContainer().edgesIgnoringSafeArea(.all)
+            Button {
+                // CODE TO SWITCH CAMERAS
+            } label: {
+                Label("Switch Camera", systemImage: "arrow.triangle.2.circlepath.camera")
+            }.buttonStyle(.borderedProminent)
+        }
     }
 }
 
@@ -19,7 +26,6 @@ struct ARViewContainer: UIViewRepresentable {
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
-        
         // Load the "Box" scene from the "Experience" Reality File
         let boxAnchor = try! Experience.loadBox()
         
