@@ -15,6 +15,7 @@ struct ContentView : View {
             ARViewContainer(arViewModel: arViewModel).edgesIgnoringSafeArea(.all)
             Button {
                 // CODE TO SWITCH CAMERAS
+                arViewModel.switchCamera()
             } label: {
                 Label("Switch Camera", systemImage: "arrow.triangle.2.circlepath.camera")
             }.buttonStyle(.borderedProminent)

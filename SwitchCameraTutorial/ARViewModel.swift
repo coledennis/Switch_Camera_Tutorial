@@ -16,4 +16,8 @@ class ARViewModel: ObservableObject {
         model.arView
     }
     
+    func switchCamera() {
+        model.switchCamera()
+    }
+    
 }
